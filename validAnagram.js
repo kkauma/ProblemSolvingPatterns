@@ -29,5 +29,32 @@ const validAnagram = (str1, str2) => {
   return true;
 };
 
-console.log(validAnagram("hello", "ohlle")); // true
-console.log(validAnagram("hello", "world")); // false
+// console.log(validAnagram("hello", "ohlle")); // true
+// console.log(validAnagram("hello", "world")); // false
+
+// Solution #2
+const validAnagram2 = (s1, s2) => {
+  if (s1.length !== s2.length) return false;
+
+  const lookup = {};
+
+  for (let i = 0; i < s1.length; i++) {
+    let letter = s1[i];
+    // if letter exists, increment, otherwise set to 1
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+  }
+
+  for (let i = 0; i < s2.length; i++) {
+    let letter = s2[i];
+    // if can't find letter or letter is 0 then it's not an anagram
+    if (!lookup[letter]) {
+      return false;
+    } else {
+      lookup[letter] -= 1;
+    }
+  }
+  return true;
+};
+
+console.log(validAnagram2("python", "yhpotn"));
+console.log(validAnagram2("ruby", "java"));
