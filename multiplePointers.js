@@ -16,7 +16,7 @@ const sumZero = (arr) => {
 
 // console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 5]));
 
-Refactored solution, linear time complexity
+// Refactored solution, linear time complexity
 const sumZero2 = (arr) => {
   let left = 0;
   let right = arr.length - 1;
