@@ -20,4 +20,20 @@ const maxSubarraySum = (arr, num) => {
   return max;
 };
 
-console.log(maxSubarraySum([2, 3, 4, 7, 6, 5, 9, 7, 1, 2, 3, 5], 3));
+// console.log(maxSubarraySum([2, 3, 4, 7, 6, 5, 9, 7, 1, 2, 3, 5], 3));
+
+// Optimal solution using sliding window pattern, O(n)
+const maxSubarraySum = (arr, num) => {
+  let maxSum = 0;
+  let tempSum = 0;
+  if (arr.length < num) return null;
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+  tempSum = maxSum;
+  for (let i = num; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = MAth.max(maxSum, tempSum);
+  }
+  return maxSum;
+};
