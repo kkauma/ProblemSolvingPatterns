@@ -29,4 +29,4 @@ const binarySearch = (arr, val) => {
   }
 };
 
-console.log(binarySearch([1, 2, 444, 5, 77, 774497, 665, 34343, 56], 77));
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
