@@ -7,4 +7,12 @@ const factorial = (num) => {
   return total;
 };
 
+// console.log(factorial(5));
+
+// Factorial solution implemented recursively
+const factorialRecursive = (num) => {
+  if (num === 1) return 1;
+  return num * factorial(num - 1);
+};
+
 console.log(factorial(5));
