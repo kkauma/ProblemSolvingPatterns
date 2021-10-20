@@ -19,4 +19,4 @@ const countDown2 = (num) => {
   console.log("All done!");
 };
 
-countDown(10);
+countDown2(10);
