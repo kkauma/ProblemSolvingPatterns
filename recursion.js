@@ -9,6 +9,8 @@ const countDown = (num) => {
   countDown(num);
 };
 
+countDown(7);
+
 // countDown function implemented iteratively
 const countDown2 = (num) => {
   for (let i = num; i > 0; i--) {
@@ -16,3 +18,5 @@ const countDown2 = (num) => {
   }
   console.log("All done!");
 };
+
+countDown(10);
